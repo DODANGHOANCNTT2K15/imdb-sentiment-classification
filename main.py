@@ -9,11 +9,11 @@ if __name__ == "__main__":
     model = joblib.load(MODEL_PATH)
     vectorizer = joblib.load(VECTORIZER_PATH)
 
-    print("Nhập bình luận (nhập 'cancel' để thoát):")
+    print("Nhập bình luận (nhập 'exit' để thoát):")
     while True:
         user_input = input(">>> ")
 
-        if user_input.lower() == "cancel":
+        if user_input.lower() == "exit":
             break
         
         cleaned_text = clean_input(user_input)
