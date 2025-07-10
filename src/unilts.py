@@ -1,5 +1,3 @@
-import pickle
-
 def clean_input_user(text, model, vectorizer):
     text = text.lower()
 
@@ -15,4 +13,7 @@ def clean_input_user(text, model, vectorizer):
     vector = vectorizer.transform([cleaned_text])
     prediction = model.predict(vector)[0]
 
-    return "Positive" if prediction == 1 else "Negative"
+    if prediction == 1:
+        return "Positive"
+    else:
+        return "Negative"
