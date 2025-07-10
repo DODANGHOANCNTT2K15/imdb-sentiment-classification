@@ -126,7 +126,7 @@ python main.py
 - Thực hiện làm sạch dự liệu nhập vào này như xử ở bước tiền xử lý dữ liệu. Điều này tránh việc người dùng nhập dữ liệu gồm các html,... 
 - Cuối cùng là mô hình sẽ dự đoán câu review này là `positive` hay `negative`.
 - Ví dụ:
-![ví dụ](result\Image_08-KetQuaDuDoan.png)
+![ví dụ](result/Image_08-KetQuaDuDoan.png)
 
 ---
 
