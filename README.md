@@ -86,13 +86,13 @@ python main.py
 - Sau khi làm sạch, lưu dữ liệu mới đã được làm sạch vào `output/data_clean.csv` để chuẩn bị dữ liệu huấn luyện model **Random Forest** sau này.
 - Bước tiếp theo EDA - Phân tích dữ liệu khám phá:
     - Phân phối độ dài của các review:
-    ![Phân phối độ dài review](result\Image_01-PhanPhoiDoDaiReview.png)
+    ![Phân phối độ dài review](result/Image_01-PhanPhoiDoDaiReview.png)
     - Top 10 từ xuất hiện trong review:
-    ![Top 10 từ xuất hiện trong review](result\Image_02-Top10TuXuatHienTrongReview.png)
+    ![Top 10 từ xuất hiện trong review](result/Image_02-Top10TuXuatHienTrongReview.png)
     - Top 10 từ xuất hiện phổ biến theo cảm xúc
-    ![Top 10 từ xuất hiện phổ biến theo cảm xúc](result\Image_03-Top10TuPhoBienTheoCamXuc.png)
+    ![Top 10 từ xuất hiện phổ biến theo cảm xúc](result/Image_03-Top10TuPhoBienTheoCamXuc.png)
     - Tỉ lệ giữa review tích cực và tiêu cực 
-    ![Tỉ lệ giữa review tích cực và tiêu cực ](result\Image_04-TiLeGiuaTichCucVaTieuCuc.png)
+    ![Tỉ lệ giữa review tích cực và tiêu cực ](result/Image_04-TiLeGiuaTichCucVaTieuCuc.png)
 2. Huấn luyện model random forest (file: `model_Random_Forest.py`):
 - Đọc file csv đã được làm sạch dữ liệu, sau đó chuyển đổi nhãn `positive` / `negative` thành giá trị nhị phân `1` / `0`. Phải chuyển nhãn vì mô hình Random forest không xử lý được dữ liệu dạng chuỗi (string).
 - Tiếp theo, Vecter hóa văn bản. Vì mô hình chỉ xử lý được vecter số nên ta phải biến các chuỗi văn bản này thành dạng vecter số.
@@ -100,11 +100,11 @@ python main.py
 - Áp dụng mô hình `RandomForestClassifier` để học từ tập huấn luyện (80% dữ liệu).
 - Kết quả huấn luyện:
     - Đánh giá mô hình
-    ![Đánh giá mô hình](result\Image_05-DanhGiaMoHinh.png)
+    ![Đánh giá mô hình](result/Image_05-DanhGiaMoHinh.png)
     - Độ chính xác của mô hình
-    ![Độ chính xác của mô hình](result\Image_06-DoChinhXacCuaMoHinh.png)
+    ![Độ chính xác của mô hình](result/Image_06-DoChinhXacCuaMoHinh.png)
     - Precision, Recall, F1-core theo lớp
-    ![Precision, Recall, F1-core theo lớp](result\Image_07-PrecisionRecallF1coreTheoLop.png)
+    ![Precision, Recall, F1-core theo lớp](result/Image_07-PrecisionRecallF1coreTheoLop.png)
 - Cuối cùng là mô hình và vector hóa được lưu dưới dạng `.pkl` bằng thư viện `joblib` để tái sử dụng sau.
 3. Thực hiện dự đoán một review mới (file: `main.py`)
 - Load mô hình đã được huấn luyện trước đó gồm `randow_forest_model.pkl` và `vector.pkl`.
