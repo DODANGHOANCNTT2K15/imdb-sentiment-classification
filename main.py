@@ -9,17 +9,14 @@ if __name__ == "__main__":
     model = joblib.load(MODEL_PATH)
     vectorizer = joblib.load(VECTORIZER_PATH)
 
-    print("Nhập bình luận (nhập 'exit' để thoát):")
+    print("Nhập bình luận (nhập 'cancel' để thoát):")
     while True:
         user_input = input(">>> ")
 
-        if user_input.lower() == "exit":
+        if user_input.lower() == "cancel":
             break
-
+        
         cleaned_text = clean_input(user_input)
-
         label = predict_new_review(model, vectorizer, cleaned_text)
-
         sentiment = "positive" if label else "nagative"
-
-        print(f"=> Dự đoán cảm xúc: {label}\n")
+        print(f"=> Dự đoán: {label}\n")
